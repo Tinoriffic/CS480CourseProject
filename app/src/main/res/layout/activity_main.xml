@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:text="Tutor Availability" />
+
+<LinearLayout
+    android:id="@+id/tutorProfile1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/appTitle"
+    android:layout_marginTop="15dp">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/user"
+        android:cropToPadding="true"
+        android:padding="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="John Doe"
+        android:textSize="20sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"/>
+
+    <Button
+        android:id="@+id/setAppointment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:text="Book Now"
+        android:textSize="12sp"
+        android:visibility="invisible"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tutorProfile2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tutorProfile1"
+        android:layout_marginTop="10dp">
+
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/user"
+            android:cropToPadding="true"
+            android:padding="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Joe Johnson"
+            android:textSize="20sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="25dp"/>
+
+        <Button
+            android:id="@+id/setAppointment2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:text="Book Now"
+            android:textSize="12sp"
+            android:visibility="invisible"/>
+
+    </LinearLayout>
+
+
+<LinearLayout
+android:id="@+id/tutorProfile3"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@+id/tutorProfile2"
+android:layout_marginTop="10dp">
+
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/user"
+        android:cropToPadding="true"
+        android:padding="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jack Smith"
+        android:textSize="20sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"/>
+
+    <Button
+        android:id="@+id/setAppointment3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:text="Book Now"
+        android:textSize="12sp"
+        android:visibility="invisible"/>
+
+</LinearLayout>
+
+
+    <TextView
+           android:id="@+id/dateChosen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tutorProfile3"
+            android:layout_marginTop="30dp"
+            android:textSize="25sp"
+            />
+
+    <Button
+        android:id="@+id/openCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dateChosen"
+        android:layout_centerHorizontal="true"
+        android:text="Open Calendar" />
+
+    <TextView
+        android:id="@+id/isAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/openCalendar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp" />
+
+
+
+</RelativeLayout>
