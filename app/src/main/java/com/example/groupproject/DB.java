@@ -29,7 +29,7 @@ public class DB extends SQLiteOpenHelper {
     }
 
     //insertion of data
-    public Boolean insertData(String firstName, String lastName, String college, String email, String password, String classyear, String mayor, String phoneNum, String radioValue){
+    public Boolean insertData(String firstName, String lastName, String college, String email, String password, String classyear, String mayor, String phoneNum, String radiovalue){
      SQLiteDatabase db = this.getWritableDatabase();
      ContentValues contentValues = new ContentValues();
      contentValues.put("firstName", firstName);
@@ -40,7 +40,7 @@ public class DB extends SQLiteOpenHelper {
      contentValues.put("Class Year", classyear);
      contentValues.put("Mayor", mayor);
      contentValues.put("Phone Number", phoneNum);
-     contentValues.put("User Choice", radioValue);
+     contentValues.put("User Choice", radiovalue);
      long result = db.insert("users", null, contentValues);
      if(result == -1) return false;
      else

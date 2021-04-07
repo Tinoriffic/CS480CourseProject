@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,6 +17,8 @@ import  android.widget.RadioGroup.OnCheckedChangeListener;
 public class MainActivity extends AppCompatActivity {
 
     //define variables
+
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
     EditText firstName;
     EditText lastName;
     EditText college;
@@ -31,7 +34,19 @@ public class MainActivity extends AppCompatActivity {
     Button register;
     Button signin;
     DB db;
-    String radiovalue;
+    String radiovalue = "temporary";
+
+    public void onCheckChanged(RadioGroup group, int checkedId ) {
+        tutorbutton = (RadioButton)findViewById(checkedId);
+        tuteebutton = (RadioButton)findViewById(checkedId);
+        if (tutorbutton != null) {
+            radiovalue = "Tutor";
+        }
+        if (tuteebutton != null) {
+            radiovalue = "Tutee";
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
        db = new DB(this);
 
        //listeners for buttons
+
         register.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,11 +95,19 @@ public class MainActivity extends AppCompatActivity {
 
                 else{
                     if(pass.equals(repass)){
+                        Log.d(LOG_TAG, "Password matches");
                         Boolean checkemail = db.checkEmail(user);
+                        Log.d(LOG_TAG, "Checkemail: " + checkemail);
+
                         //if user does not exist
-                        if(checkemail==false){
+                        if(!checkemail){
+                            Log.d(LOG_TAG, "Email doesn't exist, adding to DB");
+                            onCheckChanged(question, 1);
+                            Log.d(LOG_TAG, "Radio value: " + radiovalue);
                             Boolean insert = db.insertData(fname, lname, coll, user, pass, year, m, phoneNum, radiovalue);
-                            if(insert==true) {
+                            Log.d(LOG_TAG, "Inserted into DB?: " + insert);
+
+                            if(insert) {
                                 Toast.makeText(MainActivity.this, "Register Successfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                 startActivity(intent);
@@ -115,16 +139,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-        public void onCheckChanged(RadioGroup group, int checkedId ) {
-        tutorbutton = (RadioButton)findViewById(checkedId);
-        tuteebutton = (RadioButton)findViewById(checkedId);
-        if (tutorbutton != null) {
-            radiovalue = tutorbutton.getText().toString();
-        }
-        if (tuteebutton != null) {
-            radiovalue = tuteebutton.getText().toString();
-        }
-    }
 
 
 
