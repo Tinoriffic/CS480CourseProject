@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="First Name"
+        android:layout_marginTop="50dp" />
+
+    <EditText
+        android:id="@+id/lastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Last Name" />
+
+    <EditText
+        android:id="@+id/college"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="College"/>
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password" />
+
+
+
+    <EditText
+        android:id="@+id/repassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Retype Password" />
+
+    <EditText
+        android:id="@+id/classyear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Class Year" />
+
+    <EditText
+        android:id="@+id/mayor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mayor" />
+
+
+    <RadioGroup
+        android:id="@+id/RadioGroup1"
+        android:layout_width="296dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/tutorortutee"
+        android:textStyle="bold">
+
+        <RadioButton
+            android:id="@+id/tutor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tutor" />
+
+        <RadioButton
+            android:id="@+id/tutee"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tutee" />
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register" />
+
+    <Button
+        android:id="@+id/signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SignIn Page"
+        />
+
+</LinearLayout>

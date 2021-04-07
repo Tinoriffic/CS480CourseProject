@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GroupProject</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="tutor">Tutor</string>
+    <string name="tutee">Tutee</string>
+    <string name="tutorortutee">Would you like to be a tutor or a tutee?</string>
+</resources>
