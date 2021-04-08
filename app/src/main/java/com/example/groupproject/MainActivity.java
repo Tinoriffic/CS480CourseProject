@@ -31,12 +31,14 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup question;
     RadioButton tutorbutton;
     RadioButton tuteebutton;
+    RadioButton selectedRadioButton;
     Button register;
     Button signin;
     DB db;
-    String radiovalue = "temporary";
+    String radiovalue;
+    Integer selectedId;
 
-    public void onCheckChanged(RadioGroup group, int checkedId ) {
+  /* public void onCheckChanged(RadioGroup group, int checkedId ) {
         tutorbutton = (RadioButton)findViewById(checkedId);
         tuteebutton = (RadioButton)findViewById(checkedId);
         if (tutorbutton != null) {
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         if (tuteebutton != null) {
             radiovalue = "Tutee";
         }
-    }
+    } */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +67,11 @@ public class MainActivity extends AppCompatActivity {
      question = (RadioGroup) findViewById(R.id.RadioGroup1);
      tutorbutton = (RadioButton) findViewById(R.id.tutor);
      tuteebutton = (RadioButton) findViewById(R.id.tutee);
-
-
-
        register = (Button) findViewById(R.id.signup);
        signin = (Button) findViewById(R.id.signin);
        db = new DB(this);
+
+
 
        //listeners for buttons
 
@@ -87,6 +88,12 @@ public class MainActivity extends AppCompatActivity {
                 String m = mayor.getText().toString();
                 String phoneNum = phone.getText().toString();
 
+                //get selected radio button from radioGroup
+                selectedId = question.getCheckedRadioButtonId();
+                if (selectedId != -1){
+                    selectedRadioButton = (RadioButton) findViewById(selectedId);
+                    radiovalue = selectedRadioButton.getText().toString();
+                }
 
 
                 //if any of the editText boxes empty will produce a toast message
@@ -102,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                         //if user does not exist
                         if(!checkemail){
                             Log.d(LOG_TAG, "Email doesn't exist, adding to DB");
-                            onCheckChanged(question, 1);
+                            //onCheckChanged(question, 1);
                             Log.d(LOG_TAG, "Radio value: " + radiovalue);
                             Boolean insert = db.insertData(fname, lname, coll, user, pass, year, m, phoneNum, radiovalue);
                             Log.d(LOG_TAG, "Inserted into DB?: " + insert);

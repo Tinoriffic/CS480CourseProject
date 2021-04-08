@@ -19,7 +19,7 @@ public class DB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-    db.execSQL("create Table users( userID INTEGER primary key, firstName TEXT, lastName TEXT, college TEXT, email TEXT, password TEXT, classyear TEXT, mayor TEXT, phone TEXT, radiovalue TEXT)");
+    db.execSQL("create Table users( id INTEGER PRIMARY KEY AUTOINCREMENT, firstName TEXT, lastName TEXT, college TEXT, email TEXT, password TEXT, classyear TEXT, mayor TEXT, phone TEXT, radiovalue TEXT)");
 
     }
 
@@ -37,10 +37,10 @@ public class DB extends SQLiteOpenHelper {
      contentValues.put("college", college);
      contentValues.put("email", email);
      contentValues.put("password", password);
-     contentValues.put("Class Year", classyear);
-     contentValues.put("Mayor", mayor);
-     contentValues.put("Phone Number", phoneNum);
-     contentValues.put("User Choice", radiovalue);
+     contentValues.put("classyear", classyear);
+     contentValues.put("mayor", mayor);
+     contentValues.put("phone", phoneNum);
+     contentValues.put("radiovalue", radiovalue);
      long result = db.insert("users", null, contentValues);
      if(result == -1) return false;
      else
