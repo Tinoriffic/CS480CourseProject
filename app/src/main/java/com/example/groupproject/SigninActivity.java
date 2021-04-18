@@ -33,16 +33,19 @@ public class SigninActivity extends AppCompatActivity {
                 String user = email1.getText().toString();
                 String pass = password1.getText().toString();
 
-            if(user.equals("") || pass.equals(""))
+            if (user.equals("") || pass.equals(""))
                 Toast.makeText(SigninActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
 
-            else{
+            else {
                 Boolean checkuserpass = db.checkuserpassword(user, pass);
-                if(checkuserpass==true){
+                if (checkuserpass) {
                     Toast.makeText(SigninActivity.this, "Sign in Successful", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    // TODO set the intent to book activity so we can test if the pages link and work
+                    Intent intent = new Intent(getApplicationContext(), BookActivity.class);
                     startActivity(intent);
-                }else{
+                }
+
+                else {
                     Toast.makeText(SigninActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                 }
             }

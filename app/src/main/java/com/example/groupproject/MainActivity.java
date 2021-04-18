@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-import  android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -55,25 +55,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //initialization
-       firstName = (EditText) findViewById(R.id.firstName);
-       lastName = (EditText) findViewById(R.id.lastName);
-       college = (EditText) findViewById(R.id.college);
-       email = (EditText) findViewById(R.id.email);
-       password = (EditText) findViewById(R.id.password);
-       rePassword = (EditText) findViewById(R.id.repassword);
-       classyear = (EditText) findViewById(R.id.classyear);
-       mayor = (EditText) findViewById(R.id.mayor);
-       phone = (EditText) findViewById(R.id.phone);
-     question = (RadioGroup) findViewById(R.id.RadioGroup1);
-     tutorbutton = (RadioButton) findViewById(R.id.tutor);
-     tuteebutton = (RadioButton) findViewById(R.id.tutee);
-       register = (Button) findViewById(R.id.signup);
-       signin = (Button) findViewById(R.id.signin);
-       db = new DB(this);
+        firstName = (EditText) findViewById(R.id.firstName);
+        lastName = (EditText) findViewById(R.id.lastName);
+        college = (EditText) findViewById(R.id.college);
+        email = (EditText) findViewById(R.id.email);
+        password = (EditText) findViewById(R.id.password);
+        rePassword = (EditText) findViewById(R.id.repassword);
+        classyear = (EditText) findViewById(R.id.classyear);
+        mayor = (EditText) findViewById(R.id.mayor);
+        phone = (EditText) findViewById(R.id.phone);
+        question = (RadioGroup) findViewById(R.id.RadioGroup1);
+        tutorbutton = (RadioButton) findViewById(R.id.tutor);
+        tuteebutton = (RadioButton) findViewById(R.id.tutee);
+        register = (Button) findViewById(R.id.signup);
+        signin = (Button) findViewById(R.id.signin);
+        db = new DB(this);
 
 
-
-       //listeners for buttons
+        //listeners for buttons
 
         register.setOnClickListener(new OnClickListener() {
             @Override
@@ -90,42 +89,41 @@ public class MainActivity extends AppCompatActivity {
 
                 //get selected radio button from radioGroup
                 selectedId = question.getCheckedRadioButtonId();
-                if (selectedId != -1){
+                if (selectedId != -1) {
                     selectedRadioButton = (RadioButton) findViewById(selectedId);
                     radiovalue = selectedRadioButton.getText().toString();
                 }
 
 
                 //if any of the editText boxes empty will produce a toast message
-                if(fname.equals("") || lname.equals("") || coll.equals("") || user.equals("") ||  phoneNum.equals("") || pass.equals("") || repass.equals("") || year.equals("") || m.equals(""))
+                if (fname.equals("") || lname.equals("") || coll.equals("") || user.equals("") || phoneNum.equals("") || pass.equals("") || repass.equals("") || year.equals("") || m.equals(""))
                     Toast.makeText(MainActivity.this, "Please enter information in all fields", Toast.LENGTH_SHORT).show();
 
-                else{
-                    if(pass.equals(repass)){
+                else {
+                    if (pass.equals(repass)) {
                         Log.d(LOG_TAG, "Password matches");
                         Boolean checkemail = db.checkEmail(user);
                         Log.d(LOG_TAG, "Checkemail: " + checkemail);
 
                         //if user does not exist
-                        if(!checkemail){
+                        if (!checkemail) {
                             Log.d(LOG_TAG, "Email doesn't exist, adding to DB");
                             //onCheckChanged(question, 1);
                             Log.d(LOG_TAG, "Radio value: " + radiovalue);
                             Boolean insert = db.insertData(fname, lname, coll, user, pass, year, m, phoneNum, radiovalue);
                             Log.d(LOG_TAG, "Inserted into DB?: " + insert);
 
-                            if(insert) {
+                            if (insert) {
                                 Toast.makeText(MainActivity.this, "Register Successfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                                 startActivity(intent);
-                            }else{
-                                    Toast.makeText(MainActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
-                                }
+                            } else {
+                                Toast.makeText(MainActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                             }
-                        else{
+                        } else {
                             Toast.makeText(MainActivity.this, "User already exists! Please sign in", Toast.LENGTH_SHORT).show();
                         }
-                        }else{
+                    } else {
                         Toast.makeText(MainActivity.this, "Passwords not matching", Toast.LENGTH_SHORT).show();
                     }
 
@@ -144,9 +142,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
-
-
-
 
 
 }
