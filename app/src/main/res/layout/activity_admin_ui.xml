@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkGray">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Interface"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/database"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Database"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/tutor_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tutor Form"
+        android:layout_below="@+id/database"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/college_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="College Info"
+        android:layout_below="@+id/tutor_form"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/user_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User Profile"
+        android:layout_below="@+id/college_info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/book_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Activity"
+        android:layout_below="@+id/user_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/to_do_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToDoList"
+        android:layout_below="@+id/book_activity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:layout_below="@+id/to_do_list"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        />
+
+
+</RelativeLayout>

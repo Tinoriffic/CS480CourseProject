@@ -46,6 +46,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="25dp"
         android:text="Book Now"
+        android:onClick="testDatabase"
         android:textSize="12sp"
         android:visibility="invisible"/>
 

@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget28"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#070707"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tutorq"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dip"
+        android:gravity="center"
+        android:padding="10dip"
+        android:text="Tutor Questionnaire"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/student_major"
+        android:gravity="center"
+        android:padding="5dip"
+        android:text="What courses will you like to tutor?"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/student_major"
+        android:gravity="center"
+        android:padding="5dip"
+        android:text="You may select more than one:"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+
+
+
+    <CheckBox
+        android:id="@+id/English"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="English"
+        android:textColor="@color/white"/>
+
+    <CheckBox
+        android:id="@+id/Mathematics"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Mathematics"
+        android:textColor="@color/white"/>
+
+    <CheckBox
+        android:id="@+id/Science"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Science"
+        android:textColor="@color/white"/>
+    <CheckBox
+        android:id="@+id/Language"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Language"
+        android:textColor="@color/white"/>
+
+    <CheckBox
+        android:id="@+id/Business"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Business"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:textColor="@color/black"
+        android:background="@color/white" />
+
+</LinearLayout>

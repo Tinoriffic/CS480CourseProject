@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,9 +19,10 @@ import java.util.Calendar;
 public class BookActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     // private DatePicker datePicker;
-    private TextView dateChosen;
+    private TextView tviewDateChosen;
     private Button openCalendar;
-    private TextView isAvailable;
+    private TextView tviewIsAvailable;
+    private Calendar dateChosen;
 
     private Button setAppointment1;
     private Button setAppointment2;
@@ -32,8 +34,8 @@ public class BookActivity extends AppCompatActivity implements DatePickerDialog.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutors);
 
-        dateChosen = (TextView) findViewById(R.id.dateChosen);
-        isAvailable = (TextView) findViewById(R.id.isAvailable);
+        tviewDateChosen = (TextView) findViewById(R.id.dateChosen);
+        tviewIsAvailable = (TextView) findViewById(R.id.isAvailable);
         // datePicker = (DatePicker) findViewById(R.id.calendar_picker);
         openCalendar = (Button) findViewById(R.id.openCalendar);
 
@@ -61,29 +63,36 @@ public class BookActivity extends AppCompatActivity implements DatePickerDialog.
                     isAvailable.setText("Selected Date: " + (datePicker.getMonth() + 1) + "/" + datePicker.getDayOfMonth() + "/" + datePicker.getYear() + " is not available!");*/
             }
         });
+
+
     }
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         Calendar currentDate = Calendar.getInstance();
-        currentDate.set(Calendar.YEAR, year);
-        currentDate.set(Calendar.MONTH, month);
-        currentDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        dateChosen.set(Calendar.YEAR, year);
+        dateChosen.set(Calendar.MONTH, month);
+        dateChosen.set(Calendar.DAY_OF_MONTH, dayOfMonth);
         String currentDateString = DateFormat.getDateInstance().format(currentDate.getTime());
 
-        dateChosen.setText(currentDateString);
+        tviewDateChosen.setText(currentDateString);
 
-        if (currentDate.after(Calendar.getInstance())) {
-            isAvailable.setVisibility(View.INVISIBLE);
+        if (dateChosen.after(currentDate)) {
+            tviewIsAvailable.setVisibility(View.INVISIBLE);
             setAppointment1.setVisibility(View.VISIBLE);
             setAppointment2.setVisibility(View.VISIBLE);
             setAppointment3.setVisibility(View.VISIBLE);
         } else {
-            isAvailable.setText(R.string.unavailable);
-            isAvailable.setVisibility(View.VISIBLE);
+            tviewIsAvailable.setText(R.string.unavailable);
+            tviewIsAvailable.setVisibility(View.VISIBLE);
             setAppointment1.setVisibility(View.INVISIBLE);
             setAppointment2.setVisibility(View.INVISIBLE);
             setAppointment3.setVisibility(View.INVISIBLE);
         }
+    }
+
+    public void testDatabase(View view) {
+        Intent intent = new Intent(getApplicationContext(), UserDatabase.class);
+        startActivity(intent);
     }
 }

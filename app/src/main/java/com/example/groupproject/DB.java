@@ -31,35 +31,36 @@ public class DB extends SQLiteOpenHelper {
     //insertion of data
     public Boolean insertData(String firstName, String lastName, String college, String email, String password, String classyear, String mayor, String phoneNum, String radiovalue) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("firstName", firstName);
-        contentValues.put("lastName", lastName);
-        contentValues.put("college", college);
-        contentValues.put("email", email);
-        contentValues.put("password", password);
-        contentValues.put("classyear", classyear);
-        contentValues.put("mayor", mayor);
-        contentValues.put("phone", phoneNum);
-        contentValues.put("radiovalue", radiovalue);
-        long result = db.insert("users", null, contentValues);
+        ContentValues values = new ContentValues();
+        values.put("firstName", firstName);
+        values.put("lastName", lastName);
+        values.put("college", college);
+        values.put("email", email);
+        values.put("password", password);
+        values.put("classyear", classyear);
+        values.put("mayor", mayor);
+        values.put("phone", phoneNum);
+        values.put("radiovalue", radiovalue);
+        long result = db.insert("users", null, values);
 
-        if (result == -1) return false;
-        else
-            return true;
+        return result != -1;
     }
 
     public Boolean checkEmail(String email) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select * from users where email = ?", new String[]{email});
-        if (cursor.getCount() > 0)
-            return true;
-        else
-            return false;
+        return cursor.getCount() > 0;
     }
 
     public boolean checkuserpassword(String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select * from users where email = ? and password = ?", new String[]{email, password});
         return cursor.getCount() > 0;
+    }
+
+
+    public void dummyTutors() {
+        ContentValues values = new ContentValues();
+        // values.put(Constants., "John Doe");
     }
 }

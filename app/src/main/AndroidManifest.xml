@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.groupproject">
 
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -48,6 +50,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".UserDatabase" />
+        <activity android:name=".CollegeInfo" />
+        <activity android:name=".TutorForm" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".Registration2" />
+        <activity android:name=".SigninActivity2" />
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".ToDoList" />
 
     </application>
 

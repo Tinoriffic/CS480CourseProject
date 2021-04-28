@@ -41,7 +41,7 @@ public class SigninActivity extends AppCompatActivity {
                 if (checkuserpass) {
                     Toast.makeText(SigninActivity.this, "Sign in Successful", Toast.LENGTH_SHORT).show();
                     // TODO set the intent to book activity so we can test if the pages link and work
-                    Intent intent = new Intent(getApplicationContext(), BookActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), UserDatabase.class);
                     startActivity(intent);
                 }
 

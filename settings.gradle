@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Calendar_2"
+rootProject.name = "CS480 Course Project"
