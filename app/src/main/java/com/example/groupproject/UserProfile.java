@@ -2,21 +2,35 @@ package com.example.groupproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
+// TODO: Add a picture of the user's school in their user profile (beneath basic info)
+// TODO: Create notifications
+// TODO: Create an animation on the welcome page
+// TODO: Make the UI Pretty
+// TODO: Test the application
+
 public class UserProfile extends AppCompatActivity {
 
-        private TextView tv_email;
-        private TextView tv_phone;
-        private TextView tv_college;
+        private TextView tv_basic_info;
         private TextView tv_name;
+        private TextView tv_admin_login;
+        private Button btn_call;
+        private Button btn_msg;
+        private Button btn_list;
+        private Button btn_book;
+        private Button btn_admin;
         private SQLHelper helper;
         private SQLiteDatabase db;
 
@@ -25,10 +39,14 @@ public class UserProfile extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_user_profile);
 
-            tv_email = (TextView) findViewById(R.id.email_address);
-            tv_phone = (TextView) findViewById(R.id.phone_num);
-            tv_college = (TextView) findViewById(R.id.college_prof);
-            tv_name = (TextView) findViewById(R.id.full_name);
+            tv_basic_info = (TextView) findViewById(R.id.basic_info);
+            tv_name = (TextView) findViewById(R.id.userprofile);
+            tv_admin_login = (TextView) findViewById(R.id.tv_adminLogin);
+            btn_call = (Button) findViewById(R.id.call);
+            btn_msg = (Button) findViewById(R.id.message);
+            btn_list = (Button) findViewById(R.id.list);
+            btn_book = (Button) findViewById(R.id.book);
+            btn_admin = (Button) findViewById(R.id.admin);
 
             helper = new SQLHelper(UserProfile.this);
 
@@ -46,34 +64,32 @@ public class UserProfile extends AppCompatActivity {
             for (Person person : personList) {
                 email = person.getEmail();
                 if (SigninActivity2.login_email.equals(email)) {
-                    tv_email.setText(email);
-                    tv_phone.setText(person.getPhone());
-                    tv_college.setText(person.getCollege());
+                    String basic_information = person.getMajor() + "  " + person.getClassYear() + "  " + person.getCollege();
+                    tv_basic_info.setText(basic_information);
+
                     String name = person.getFirstName() + " " + person.getLastName();
                     tv_name.setText(name);
                 }
-
-            /*Cursor cursor = db.UserProfile();
-            if (cursor.moveToFirst()) {
-                do {
-                    String string_email = cursor.getString(cursor.getColumnIndex("email"));
-                    email.setText(string_email);
-
-                    String string_phone = cursor.getString(cursor.getColumnIndex("phone"));
-                    phone.setText(string_phone);
-
-                    String string_college = cursor.getString(cursor.getColumnIndex("college"));
-                    college.setText(string_college);
-
-                    String string_first = cursor.getString(cursor.getColumnIndex("firstName"));
-                    String string_last = cursor.getString(cursor.getColumnIndex("lastName"));
-
-                    name.setText(string_first + " " + string_last);
-
-                } while (cursor.moveToNext());
-
             }
-            cursor.close();*/
-            }
+    }
+
+    public void bookAppointment(View view) {
+        Intent intent = new Intent(getApplicationContext(), BookActivity.class);
+        startActivity(intent);
+    }
+
+    public void toDoList(View view) {
+        Intent intent = new Intent(getApplicationContext(), ToDoList.class);
+        startActivity(intent);
+    }
+
+    public void adminInterface(View view) {
+        if (tv_admin_login.getText().toString().equals("Harry Bentley")) {
+            Toast.makeText(this, "Password Accepted", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+            startActivity(intent);
+        }
+        else
+            Toast.makeText(this, "Incorrect Password!", Toast.LENGTH_SHORT).show();
     }
 }

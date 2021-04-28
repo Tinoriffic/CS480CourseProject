@@ -124,7 +124,7 @@ public class Registration2 extends Activity {
                             Log.d(LOG_TAG, "Radio value: " + radiovalue);
 
                             try {
-                                helper.addPerson(new Person(user, pass, fname, lname, coll, year, phoneNum, m, 0));
+                                helper.addPerson(new Person(user, pass, fname, lname, coll, phoneNum, year, m, 0));
                                 insert = true;
                                 Log.d(LOG_TAG, "Inserted into DB");
                             }

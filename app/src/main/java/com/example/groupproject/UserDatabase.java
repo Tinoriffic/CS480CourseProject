@@ -22,8 +22,7 @@ public class UserDatabase extends Activity {
 
     private static final String LOG = "SQLiteLog";
 
-    // TODO: create a test DB layout file where we can test creating, adding to and querying the DB
-    // TODO: Create a second sign in activity, copy the contents of the original but use the helper DB instead!
+
     // Set the content view to the test DB layout
     @Override
     public void onCreate(Bundle savedInstanceState) {

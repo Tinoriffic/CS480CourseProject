@@ -47,7 +47,7 @@ public class SigninActivity2 extends Activity {
                     if (checkUserPassword) {
                         Toast.makeText(SigninActivity2.this, "Sign in Successful", Toast.LENGTH_SHORT).show();
                         login_email = user;
-                        Intent intent = new Intent(getApplicationContext(), AdminActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), UserProfile.class);
                         startActivity(intent);
                     }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Group Project</string>
+    <string name="app_name">Unidom</string>
     <string name="unavailable">No tutors available!</string>
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
