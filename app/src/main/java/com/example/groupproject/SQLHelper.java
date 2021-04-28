@@ -30,6 +30,7 @@ public class SQLHelper extends SQLiteOpenHelper {
     public static final String PHONE = "PHONE";
     public static final String MAJOR = "MAJOR";
 
+    // Create TABLE SQL string
     public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + EMAIL + " TEXT, " + PASSWORD
             + " TEXT, " + FIRST_NAME + " TEXT, " + LAST_NAME + " TEXT, " + COLLEGE + " TEXT, " +  CLASS_YEAR + " TEXT, "
             + PHONE + " TEXT, " + MAJOR + " TEXT)";
@@ -57,6 +58,7 @@ public class SQLHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
     }
 
+    // Method for adding a person object to DB
     public void addPerson(Person item) {
         SQLiteDatabase db = this.getWritableDatabase();
         values = new ContentValues();
@@ -73,6 +75,7 @@ public class SQLHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+      // Potential Methods
 /*    // Update person's email
     public void updatePerson(Person item, Person newItem) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -118,12 +121,14 @@ public class SQLHelper extends SQLiteOpenHelper {
 
     }
 
+    // Search for user's email
     public Boolean checkEmail(String email) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select * from " + TABLE_NAME + " where " + EMAIL + " = ?", new String[]{email});
         return cursor.getCount() > 0;
     }
 
+    // Search for user's password
     public boolean checkUserPassword(String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select * from " + TABLE_NAME + " where " + EMAIL + " = ? and " + PASSWORD + " = ?", new String[]{email, password});

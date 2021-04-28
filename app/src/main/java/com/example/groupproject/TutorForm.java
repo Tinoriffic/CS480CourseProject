@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
-
+// Future class, not currently in use for calculating what tutee's need assistance with
 public class TutorForm extends AppCompatActivity {
 
     CheckBox englishcheckbox;

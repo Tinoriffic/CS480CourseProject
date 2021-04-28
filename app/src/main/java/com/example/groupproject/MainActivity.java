@@ -1,5 +1,12 @@
 package com.example.groupproject;
 
+/*
+!!!!
+This is our old Sign in page before we upgraded to the SQLHelper & UserDatabase classes
+No longer in use
+See Registration2 Activity
+!!!!
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -115,8 +122,8 @@ public class MainActivity extends AppCompatActivity {
 
                             if (insert) {
                                 Toast.makeText(MainActivity.this, "Register Successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                                startActivity(intent);
+                                // Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                // startActivity(intent);
                             } else {
                                 Toast.makeText(MainActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                             }

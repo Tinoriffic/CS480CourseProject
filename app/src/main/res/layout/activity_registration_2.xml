@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".Registration2"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/darkGray">
 
 
     <EditText
@@ -14,57 +15,82 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="First Name"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
 
     <EditText
         android:id="@+id/lastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Last Name" />
+        android:hint="Last Name"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
 
     <EditText
         android:id="@+id/college"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="College"/>
+        android:hint="College"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
 
     <EditText
         android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Phone Number"/>
+        android:hint="Phone Number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
 
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"/>
+        android:hint="Email"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password" />
-
-
+        android:hint="Password"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
 
     <EditText
         android:id="@+id/repassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Retype Password" />
+        android:hint="Retype Password"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
 
     <EditText
         android:id="@+id/classyear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Class Year" />
+        android:hint="Class Year"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
 
     <EditText
         android:id="@+id/mayor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Major" />
+        android:hint="Major"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"/>
 
 
     <RadioGroup
@@ -74,19 +100,23 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:text="@string/tutorortutee"
-        android:textStyle="bold">
+        android:textStyle="bold"
+        android:theme="@style/RadioButtonStyle">
 
         <RadioButton
             android:id="@+id/tutor"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tutor" />
+            android:text="@string/tutor"
+            android:textColor="@color/white"/>
 
         <RadioButton
             android:id="@+id/tutee"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tutee" />
+            android:text="@string/tutee"
+            android:textColor="@color/white"/>
+
     </RadioGroup>
 
 
@@ -94,13 +124,17 @@
         android:id="@+id/signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register" />
+        android:text="Register"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/signin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SignIn Page"
+        android:text="Sign In"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
         />
 
 </LinearLayout>

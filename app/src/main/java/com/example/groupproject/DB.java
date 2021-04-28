@@ -8,6 +8,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+/*
+!!!!
+This is our old Database before we upgraded to the SQLHelper & UserDatabase classes
+No longer in use
+See UserDatabase Activity
+!!!!
+ */
+
 public class DB extends SQLiteOpenHelper {
 
     public static final String DBNAME = "Login.db";

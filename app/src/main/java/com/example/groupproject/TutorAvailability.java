@@ -2,6 +2,7 @@ package com.example.groupproject;
 
 import java.util.Calendar;
 
+// Future Class, not currently in use for calculating tutor's availabilities
 public class TutorAvailability {
 
     private Calendar calendar;

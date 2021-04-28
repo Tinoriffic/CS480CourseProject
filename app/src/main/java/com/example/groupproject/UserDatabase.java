@@ -65,6 +65,7 @@ public class UserDatabase extends Activity {
         ArrayList<Person> personList = helper.getPersonList();
         int count = 0;
 
+        // Prints to Admin UI Database view
         for (Person person : personList) {
             count++;
             text.append(person.getFirstName() + " " + person.getLastName() + " " + person.getEmail() + " " + person.getPhone());

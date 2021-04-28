@@ -29,6 +29,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Locale;
 
+// Notes App
 public class ToDoList extends AppCompatActivity implements TextToSpeech.OnInitListener {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
@@ -82,9 +83,9 @@ public class ToDoList extends AppCompatActivity implements TextToSpeech.OnInitLi
 
         if (!saveExists) {
             // Add items to an array list if save file doesn't exist
-            items.add("Meal prep");
-            items.add("Submit assignment");
-            items.add("Prepare for interview");
+            items.add("CS480: Present Final Project");
+            items.add("Pack things to go home");
+            items.add("Movie night Friday!");
         }
 
         // Adds the number sequence to each element of the array list
@@ -172,6 +173,7 @@ public class ToDoList extends AppCompatActivity implements TextToSpeech.OnInitLi
         return true;
     }
 
+    // Options Menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 

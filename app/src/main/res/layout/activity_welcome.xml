@@ -6,34 +6,56 @@
     android:layout_height="match_parent"
     android:padding="@dimen/box_inset_layout_padding"
     tools:context=".WelcomeActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/darkGray">
 
-
-    <Button
-        android:id="@+id/Registerbuttonlink"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register" />
+        android:text="Welcome To"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:padding="24dp"/>
 
-    <Button
-        android:id="@+id/Signinpagebuttonlink"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/title_2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SignIn Page"
-        />
+        android:text="UNIDOM"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center" />
 
     <Button
         android:id="@+id/Register_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register 2" />
+        android:text="Register "
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        android:layout_marginTop="36dp"
+        />
 
     <Button
         android:id="@+id/SignIn_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign In 2"
+        android:text="Sign In "
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        android:layout_marginTop="12dp"
         />
+
+    <ImageView
+        android:id="@+id/animation"
+        android:layout_marginTop="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
 
 
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/selected" android:oneshot="false">
+    <item android:drawable="@drawable/ninja_1" android:duration="250" />
+    <item android:drawable="@drawable/ninja_2" android:duration="250" />
+    <item android:drawable="@drawable/ninja_3" android:duration="250" />
+    <item android:drawable="@drawable/ninja_4" android:duration="250" />
+    <item android:drawable="@drawable/ninja_5" android:duration="250" />
+    <item android:drawable="@drawable/ninja_6" android:duration="250" />
+    <item android:drawable="@drawable/ninja_7" android:duration="250" />
+    <item android:drawable="@drawable/ninja_8" android:duration="250" />
+</animation-list>

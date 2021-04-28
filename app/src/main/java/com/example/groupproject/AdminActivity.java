@@ -32,6 +32,7 @@ public class AdminActivity extends Activity {
         btn_to_do_list = (Button) findViewById(R.id.to_do_list);
         btn_exit = (Button) findViewById(R.id.exit);
 
+        // Interface of buttons that lead to all of the activities
         btn_database.setOnClickListener(new View.OnClickListener() {
 
             @Override

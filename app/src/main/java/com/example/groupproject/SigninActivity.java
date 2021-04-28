@@ -1,5 +1,11 @@
 package com.example.groupproject;
-
+/*
+!!!!
+This is our old Database before we upgraded to the SQLHelper & UserDatabase classes
+No longer in use
+See SigninActivty2
+!!!!
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

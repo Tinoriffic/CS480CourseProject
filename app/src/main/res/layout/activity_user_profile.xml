@@ -17,8 +17,7 @@
         android:padding="10dp"
         android:text="User Profile"
         android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/basic_info"
@@ -38,11 +37,12 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="CALL"
-        android:textStyle="bold"
         android:layout_below="@+id/basic_info"
-        android:layout_margin="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
         android:backgroundTint="@color/spaceBlue"
         android:textColor="@color/black"
+        android:onClick="dialer"
         />
 
     <Button
@@ -51,11 +51,12 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="MESSAGE"
-        android:textStyle="bold"
         android:layout_below="@+id/basic_info"
-        android:layout_margin="15dp"
+        android:layout_toEndOf="@+id/call"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
         android:layout_toRightOf="@+id/call"
-        android:onClick="sendMessage"
+        android:onClick="message"
         android:backgroundTint="@color/spaceBlue"
         android:textColor="@color/black"
         />
@@ -66,29 +67,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/basic_info"
-        android:layout_toRightOf="@+id/message"
+        android:layout_toEndOf="@+id/message"
         android:gravity="center"
-        android:text="TO DO LIST"
-        android:textStyle="bold"
-        android:layout_margin="15dp"
+        android:text="Notes"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
         android:backgroundTint="@color/spaceBlue"
         android:textColor="@color/black"
         android:onClick="toDoList"/>
 
     <Button
         android:id="@+id/book"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/call"
         android:gravity="center"
+        android:layout_centerHorizontal="true"
         android:text="BOOK APPOINTMENT"
-        android:textStyle="bold"
-        android:layout_margin="10dp"
+        android:layout_marginTop="30dp"
         android:backgroundTint="@color/spaceBlue"
         android:textColor="@color/black"
         android:onClick="bookAppointment"
         />
 
+    <Button
+        android:id="@+id/college_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/book"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="College Resources"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        android:onClick="college_info"
+        />
     <EditText
         android:id="@+id/tv_adminLogin"
         android:layout_width="wrap_content"
@@ -96,7 +110,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
-        android:ems="10"
+        android:ems="9"
         android:hint="Admin Login"
         android:inputType="textPersonName"
         android:textColor="@color/white"
@@ -106,7 +120,6 @@
         android:id="@+id/admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
         android:layout_toEndOf="@+id/tv_adminLogin"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="8dp"
@@ -115,6 +128,19 @@
         android:backgroundTint="@color/spaceBlue"
         android:textColor="@color/black"
         android:onClick="adminInterface" />
+
+    <Button
+        android:id="@+id/logOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/admin"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Logout"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
+        android:onClick="logout" />
 
 
 </RelativeLayout>

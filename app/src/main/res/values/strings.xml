@@ -8,4 +8,6 @@
     <string name="tutorortutee">Would you like to be a tutor or a tutee?</string>
     <string name="title_activity_booking">BookAppointmentsActivity</string>
     <string name="tutor_availability">Tutor Availability</string>
+    <string name="channel_name">XYZ</string>
+    <string name="channel_description">For Your Enjoyment</string>
 </resources>

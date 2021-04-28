@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,8 +17,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 // TODO: Add a picture of the user's school in their user profile (beneath basic info)
-// TODO: Create notifications
-// TODO: Create an animation on the welcome page
 // TODO: Make the UI Pretty
 // TODO: Test the application
 
@@ -31,6 +30,7 @@ public class UserProfile extends AppCompatActivity {
         private Button btn_list;
         private Button btn_book;
         private Button btn_admin;
+        private String phone_num;
         private SQLHelper helper;
         private SQLiteDatabase db;
 
@@ -61,10 +61,12 @@ public class UserProfile extends AppCompatActivity {
             ArrayList<Person> personList = helper.getPersonList();
             String email = "";
 
+            // Iterate through person list to find the current user's information
             for (Person person : personList) {
                 email = person.getEmail();
                 if (SigninActivity2.login_email.equals(email)) {
                     String basic_information = person.getMajor() + "  " + person.getClassYear() + "  " + person.getCollege();
+                    phone_num = person.getPhone();
                     tv_basic_info.setText(basic_information);
 
                     String name = person.getFirstName() + " " + person.getLastName();
@@ -73,6 +75,7 @@ public class UserProfile extends AppCompatActivity {
             }
     }
 
+    // Button interface methods
     public void bookAppointment(View view) {
         Intent intent = new Intent(getApplicationContext(), BookActivity.class);
         startActivity(intent);
@@ -91,5 +94,28 @@ public class UserProfile extends AppCompatActivity {
         }
         else
             Toast.makeText(this, "Incorrect Password!", Toast.LENGTH_SHORT).show();
+    }
+
+    public void dialer(View view) {
+            Uri uri = Uri.parse("tel:17818912000");
+            Intent intent = new Intent(Intent.ACTION_DIAL, uri);
+            startActivity(intent);
+    }
+
+    public void message(View view){
+        Uri uri = Uri.parse("smsto:");
+        Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+        //intent.putExtra("sms_body", smsText);
+        startActivity(intent);
+    }
+
+    public void college_info(View view) {
+        Intent intent = new Intent(getApplicationContext(), CollegeInfo.class);
+        startActivity(intent);
+    }
+
+    public void logout(View view) {
+        Intent intent = new Intent(getApplicationContext(), WelcomeActivity.class);
+        startActivity(intent);
     }
 }

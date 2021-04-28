@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 public class Registration2 extends Activity {
 
-    //define variables
+    // Define variables
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     private SQLHelper helper;
@@ -40,24 +40,12 @@ public class Registration2 extends Activity {
     String radiovalue;
     Integer selectedId;
 
-
-  /* public void onCheckChanged(RadioGroup group, int checkedId ) {
-        tutorbutton = (RadioButton)findViewById(checkedId);
-        tuteebutton = (RadioButton)findViewById(checkedId);
-        if (tutorbutton != null) {
-            radiovalue = "Tutor";
-        }
-        if (tuteebutton != null) {
-            radiovalue = "Tutee";
-        }
-    } */
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_2);
 
-        //initialization
+        // Initialization
         firstName = (EditText) findViewById(R.id.firstName);
         lastName = (EditText) findViewById(R.id.lastName);
         college = (EditText) findViewById(R.id.college);
@@ -84,7 +72,7 @@ public class Registration2 extends Activity {
         }
 
 
-        //listeners for buttons
+        // Listeners for buttons
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +95,7 @@ public class Registration2 extends Activity {
                 }
 
 
-                //if any of the editText boxes empty will produce a toast message
+                // If any of the editText boxes empty will produce a toast message
                 if (fname.equals("") || lname.equals("") || coll.equals("") || user.equals("") || phoneNum.equals("") || pass.equals("") || repass.equals("") || year.equals("") || m.equals(""))
                     Toast.makeText(Registration2.this, "Please enter information in all fields", Toast.LENGTH_SHORT).show();
 
@@ -117,10 +105,10 @@ public class Registration2 extends Activity {
                         Boolean checkEmail = helper.checkEmail(user);
                         Log.d(LOG_TAG, "CheckEmail: " + checkEmail);
 
-                        //if user does not exist
+                        // If user does not exist
                         if (!checkEmail) {
                             Log.d(LOG_TAG, "Email doesn't exist, adding to DB");
-                            //onCheckChanged(question, 1);
+                            // onCheckChanged(question, 1);
                             Log.d(LOG_TAG, "Radio value: " + radiovalue);
 
                             try {

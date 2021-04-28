@@ -46,6 +46,7 @@ public class CollegeInfo extends AppCompatActivity implements AdapterView.OnItem
         spinner.setOnItemSelectedListener(this);
     }
 
+    // Spinner of nearby colleges
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String chosen = spinner_options[position];

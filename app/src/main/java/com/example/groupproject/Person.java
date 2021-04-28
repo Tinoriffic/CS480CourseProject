@@ -1,5 +1,6 @@
 package com.example.groupproject;
 
+// Defines a person object to store user's information after registration
 public class Person {
 
     private String email;

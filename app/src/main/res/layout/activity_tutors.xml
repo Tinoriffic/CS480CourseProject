@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookActivity">
+    tools:context=".BookActivity"
+    android:background="@color/darkGray">
 
     <TextView
         android:id="@+id/appTitle"
@@ -13,7 +14,8 @@
         android:layout_marginTop="25dp"
         android:layout_centerHorizontal="true"
         android:textSize="30sp"
-        android:text="@string/tutor_availability" />
+        android:text="@string/tutor_availability"
+        android:textColor="@color/white"/>
 
 <LinearLayout
     android:id="@+id/tutorProfile1"
@@ -36,6 +38,7 @@
         android:layout_height="wrap_content"
         android:text="John Doe"
         android:textSize="20sp"
+        android:textColor="@color/white"
         android:layout_marginStart="8dp"
         android:layout_marginTop="25dp"/>
 
@@ -46,8 +49,9 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="25dp"
         android:text="Book Now"
-        android:onClick="testDatabase"
         android:textSize="12sp"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
         android:visibility="invisible"/>
 
 </LinearLayout>
@@ -72,6 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Joe Johnson"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="25dp"/>
@@ -84,6 +89,8 @@
             android:layout_marginTop="25dp"
             android:text="Book Now"
             android:textSize="12sp"
+            android:backgroundTint="@color/spaceBlue"
+            android:textColor="@color/black"
             android:visibility="invisible"/>
 
     </LinearLayout>
@@ -109,6 +116,7 @@ android:layout_marginTop="10dp">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jack Smith"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="25dp"/>
@@ -121,6 +129,8 @@ android:layout_marginTop="10dp">
         android:layout_marginTop="25dp"
         android:text="Book Now"
         android:textSize="12sp"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"
         android:visibility="invisible"/>
 
 </LinearLayout>
@@ -134,6 +144,7 @@ android:layout_marginTop="10dp">
             android:layout_below="@+id/tutorProfile3"
             android:layout_marginTop="30dp"
             android:textSize="25sp"
+            android:textColor="@color/white"
             />
 
     <Button
@@ -142,7 +153,9 @@ android:layout_marginTop="10dp">
         android:layout_height="wrap_content"
         android:layout_below="@+id/dateChosen"
         android:layout_centerHorizontal="true"
-        android:text="Open Calendar" />
+        android:text="Open Calendar"
+        android:backgroundTint="@color/spaceBlue"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/isAvailable"
@@ -151,7 +164,8 @@ android:layout_marginTop="10dp">
         android:layout_below="@+id/openCalendar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
 
 
 
